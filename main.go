@@ -52,6 +52,10 @@ func main() {
 	cfg, _ := goconfig.LoadConfigFile(usr.HomeDir + "/.drackvmrc")
 	version := *_version
 
+    // Set the defaults, will be overidden below if requested.
+	username = DefaultUsername
+	password = DefaultPassword
+
 	// Get the default username and password from the config
         if cfg != nil {
 		_, err:= cfg.GetSection("defaults")
